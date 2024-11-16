@@ -76,7 +76,7 @@ class TkinterApp:
 
         # Input fields container
         inputs_frame = tk.Frame(self.app)
-        inputs_frame.pack(fill=tk.BOTH, padx=20, pady=10)
+        inputs_frame.pack(fill=tk.BOTH, padx=20, pady=5)
 
         # Input 1
         input1_label = tk.Label(inputs_frame, text="Voter ID", font=(
