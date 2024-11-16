@@ -67,9 +67,12 @@ class TkinterApp:
         header_label.pack(pady=10, anchor="w", padx=20)
 
         # Description
-        description_label = tk.Label(self.app, text="Please enter your voter ID and registration PIN. These are found on the card that you were given by your local election agent.", font=(
-            "Arial", 12), anchor="w", justify="left")
-        description_label.pack(pady=5, anchor="w", padx=20)
+        description_text = tk.Text(self.app, font=(
+            "Arial", 12), wrap="word", height=4, padx=10, pady=10, bg=self.app.cget("background"), relief="flat")
+        description_text.insert(
+            "1.0", "Please enter your voter ID and registration PIN. These are found on the card that you were given by your local election agent.")
+        description_text.config(state="disabled")
+        description_text.pack(pady=5, anchor="w", padx=20)
 
         # Input fields container
         inputs_frame = tk.Frame(self.app)
@@ -143,9 +146,11 @@ class TkinterApp:
         startover_button.grid(row=0, column=1, padx=10)
 
         # Footer
-        footer_label = tk.Label(self.app, text="After submitting your vote, please collect your ballot from the printer on your right and ensure that your ranked choices match your selections. After inspection, hand the printed ballot to the local election agent. Thank you for voting.", font=(
-            "Arial", 12), anchor="w", justify="left")
-        footer_label.pack(pady=5, anchor="w", padx=20)
+        footer_text = tk.Text(self.app, font=("Arial", 12), wrap="word", height=4,
+                              padx=10, pady=10, bg=self.app.cget("background"), relief="flat")
+        footer_text.insert("1.0", "After submitting your vote, please collect your ballot from the printer on your right and ensure that your ranked choices match your selections. After inspection, hand the printed ballot to the local election agent. Thank you for voting.")
+        footer_text.config(state="disabled")
+        footer_text.pack(pady=5, anchor="w", padx=20)
 
     def run(self):
         self.app.mainloop()
